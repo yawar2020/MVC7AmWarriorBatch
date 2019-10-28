@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "GetData";
+}
+
+<h2>GetData</h2>
+
+<p>I am here To tell you About Employess</p>
+
+@Html.Partial("_mypartialView", (List<MVC7AmWarriorBatch.Models.EmployeeModel>)ViewBag.Empinfo)*@
+
+<br />
+
+@{
+    Html.RenderPartial("_mypartialView", (List<MVC7AmWarriorBatch.Models.EmployeeModel>)ViewBag.Empinfo);
+ }

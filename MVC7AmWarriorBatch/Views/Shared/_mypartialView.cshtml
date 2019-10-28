@@ -1,0 +1,9 @@
+﻿
+@model  List<MVC7AmWarriorBatch.Models.EmployeeModel>
+
+@foreach (var item in Model)
+{
+    @item.Empid
+    @item.EmpName<span>-</span>
+    @item.EmpSalary<br />
+}

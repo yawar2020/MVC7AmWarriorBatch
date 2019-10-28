@@ -1,0 +1,23 @@
+﻿@model  List<MVC7AmWarriorBatch.Models.EmployeeModel>
+@{
+    ViewBag.Title = "GetEmployee";
+}
+
+<h2>GetEmployee is Going to Called employees Detail</h2>
+
+@foreach (var item in Model)
+{
+    @item.Empid<span style="color:red">vnmvn</span>
+    @item.EmpName<span>-</span>
+    @item.EmpSalary<br />
+}
+
+@foreach (var item in ViewBag.Empinfo)
+{
+    @item.Empid<span style="color:red">vnmvn</span>
+    @item.EmpName<span>-</span>
+    @item.EmpSalary<br />
+}
+
+
+
