@@ -27,5 +27,17 @@ namespace Ado.net_approach.Models
             }
             return list;
         }
+        public int saveEmployeeDetails(EmployeModel obj)
+        {
+            SqlCommand cmd = new SqlCommand("sp_SaveEmployeeDetails_Warriors", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            con.Open();
+            cmd.Parameters.AddWithValue("@EmpName",obj.EmpName );
+            cmd.Parameters.AddWithValue("@EmpSalary", obj.EmpSalary);
+            object i = cmd.ExecuteScalar();
+            int result = Convert.ToInt32(i);
+            con.Close();
+            return result;
+        }
     }
 }
