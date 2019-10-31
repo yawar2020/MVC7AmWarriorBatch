@@ -39,5 +39,39 @@ namespace Ado.net_approach.Models
             con.Close();
             return result;
         }
+        public EmployeModel GetEmployeeDetailsById(int? id) {
+            SqlCommand cmd = new SqlCommand("sp_GetEmployeeDetailById", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Empid", id);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            EmployeModel emp = new EmployeModel();
+            
+            foreach (DataRow dr in dt.Rows)
+            {
+                emp.EmpId = Convert.ToInt32(dr[0]);
+                emp.EmpName = Convert.ToString(dr[1]);
+                emp.EmpSalary = Convert.ToInt32(dr[2]);
+              
+            }
+            return emp;
+
+        }
+
+        
+             public int UpdateEmployeeDetailsById(EmployeModel obj)
+        {
+            SqlCommand cmd = new SqlCommand("sp_UpdateEmployeeDetails_Warriors", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            con.Open();
+            cmd.Parameters.AddWithValue("@Empid", obj.EmpId);
+            cmd.Parameters.AddWithValue("@EmpName", obj.EmpName);
+            cmd.Parameters.AddWithValue("@EmpSalary", obj.EmpSalary);
+            object i = cmd.ExecuteNonQuery();
+            int result = Convert.ToInt32(i);
+            con.Close();
+            return result;
+        }
     }
 }

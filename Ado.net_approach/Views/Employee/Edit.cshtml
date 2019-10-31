@@ -1,0 +1,16 @@
+﻿@model  Ado.net_approach.Models.EmployeModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.Hidden("EmpId",Model.EmpId)
+    @Html.Label("EmpName")
+    @Html.TextBox("EmpName",Model.EmpName)<br />
+    @Html.Label("EmpSalary")
+    @Html.TextBox("EmpSalary",Model.EmpSalary)<br />
+    <input type="submit" value="save" class="btn btn-success" />
+}

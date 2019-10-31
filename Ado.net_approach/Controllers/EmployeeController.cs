@@ -31,5 +31,26 @@ namespace Ado.net_approach.Controllers
 
             }
         }
+        [HttpGet]
+        public ActionResult Edit(int? id)
+        {
+            EmployeModel obj = db.GetEmployeeDetailsById(id);
+            return View(obj);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(EmployeModel e)
+        {
+           int i=db.UpdateEmployeeDetailsById(e);
+            if (i > 0)
+            {
+                return RedirectToAction("index");
+            }
+            else
+            {
+                return View(e);
+
+            }
+        }
     }
 }
