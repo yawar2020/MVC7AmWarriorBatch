@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC7AmWarriorBatch", "MVC7A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ado.net_approach", "Ado.net_approach\Ado.net_approach.csproj", "{3F78502D-0482-4E6D-B358-2244DC70BB49}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.net WebApi", "Asp.net WebApi\Asp.net WebApi.csproj", "{7B99BECD-4E8C-4C31-8438-12786D81FF82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3F78502D-0482-4E6D-B358-2244DC70BB49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F78502D-0482-4E6D-B358-2244DC70BB49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F78502D-0482-4E6D-B358-2244DC70BB49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B99BECD-4E8C-4C31-8438-12786D81FF82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B99BECD-4E8C-4C31-8438-12786D81FF82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B99BECD-4E8C-4C31-8438-12786D81FF82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B99BECD-4E8C-4C31-8438-12786D81FF82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -73,5 +73,16 @@ namespace Ado.net_approach.Models
             con.Close();
             return result;
         }
+        public int DeleteEmployeeDetailsById(int? id)
+        {
+            SqlCommand cmd = new SqlCommand("sp_DeleteEmpDetailById", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            con.Open();
+            cmd.Parameters.AddWithValue("@Empid", id);
+            object i = cmd.ExecuteNonQuery();
+            int result = Convert.ToInt32(i);
+            con.Close();
+            return result;
+        }
     }
 }

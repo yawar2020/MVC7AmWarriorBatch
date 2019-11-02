@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "GetApiAllData";
+}
+
+<h2>GetApiAllData</h2>
+
+
+
+    <table id="table-1">
+        <thead>
+            <tr>
+                <th>
+                    Employee Id
+                </th>
+                <th>
+                    EmployeeName
+                </th>
+                <th>
+                    EmployeeSalary
+                </th>
+                <th>
+                    DeptId
+                </th>
+            </tr>
+        </thead>
+    </table>
+<br />
+<br />
+
+<form>
+    
+    EmpName <input type="text" name="EmpName" id="EmpName" /><br />
+    EmpSalary <input type="text" name="EmpSalary" id="EmpSalary" /><br />
+    Deptid <input type="text" name="EmpDeptId" id="EmpDeptId" /><br />
+    <p id="Save">Click me</p>
+
+</form>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+    <script>
+        onload = function showdata() {
+            $.ajax({
+                url: "http://localhost:60497/api/EmployeeModels",
+                type: "Get",
+                datatype: "json",
+                success: function (result) {
+
+                    alert(result);
+                    $.each(result, function (i, key) {
+
+
+                        $("#table-1 tr:last").after('<tr><td>' + key.Empid + '</td><td>' + key.EmpName + '</td><td>' + key.EmpSalary + '</td></tr>' + '</td><td>' + key.DeptId + '</td></tr>');
+
+                    });
+
+                }
+            });
+        }
+
+
+        $('#Save').click(function () {
+            var url = "http://localhost:60497/api/EmployeeModels";
+            var EmpName = $("#EmpName").val();
+            var EmpSalary = $("#EmpSalary").val();
+            var DeptId = $("#EmpDeptId").val();
+            $.post(url, { EmpName: EmpName, EmpSalary: EmpSalary, DeptId: DeptId }, function (data) {
+                $("#msg").html(data);
+            });
+        })
+    </script>
+
+
+

@@ -52,5 +52,37 @@ namespace Ado.net_approach.Controllers
 
             }
         }
+
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            EmployeModel obj = db.GetEmployeeDetailsById(id);
+            return View(obj);
+        }
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int ? id)
+        {
+            int i = db.DeleteEmployeeDetailsById(id);
+            if (i > 0)
+            {
+                return RedirectToAction("index");
+            }
+            else
+            {
+                return View();
+
+            }
+        }
+
+        public ActionResult sendData() {
+
+            ViewData["Student"] = "Supriya";
+            return RedirectToAction("getData");
+        }
+        public ActionResult getData() {
+          string s=  ViewData["Student"].ToString();
+            return View();
+        }
     }
 }
