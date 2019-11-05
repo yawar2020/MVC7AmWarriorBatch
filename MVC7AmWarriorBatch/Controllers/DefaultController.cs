@@ -97,5 +97,21 @@ namespace MVC7AmWarriorBatch.Controllers
             // return Content("<p style='color:green'>Hello World</p>");
             return Content("<script>alert('Hello World');</script>");
         }
+
+        public ActionResult SetDataViewBag()
+        {
+            //ViewData["EmpName"] = "supriya";
+            ViewBag.Empname = "Supriya";
+
+            return RedirectToAction("GetDataViewBag");
+        }
+        public ActionResult GetDataViewBag()
+        {
+            ViewData["EmpName"] = "supriya";
+            // string data=ViewData["EmpName"].ToString();
+            // string data = ViewBag.Empname;
+            return View();
+        }
+
     }
 }

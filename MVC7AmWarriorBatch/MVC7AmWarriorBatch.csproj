@@ -153,6 +153,7 @@
     <Content Include="Views\Default\Jerry.cshtml" />
     <Content Include="Views\Shared\_MyLayout.cshtml" />
     <Content Include="Views\Default\Index1.cshtml" />
+    <Content Include="Views\Default\GetDataViewBag.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
