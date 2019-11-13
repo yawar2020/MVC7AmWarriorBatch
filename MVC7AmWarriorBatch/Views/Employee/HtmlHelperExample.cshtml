@@ -1,0 +1,31 @@
+﻿@model MVC7AmWarriorBatch.Models.EmployeeModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HtmlHelperExample</title>
+</head>
+<body>
+    <div> 
+        @Html.TextBox("Firstname","kajol",new {@style="background-color:red;color:white;", @class="form-control"})
+    @Html.Password("psword","myValue")<br />
+        @Html.RadioButton("gender","Male")<span>Male</span>
+        @Html.RadioButton("gender", "FeMale")<span>FeMale</span>
+        <label>Select Country</label>@Html.DropDownList("Country", new List<SelectListItem>()
+{
+    new SelectListItem {Text="India",Value="1" },
+    new SelectListItem {Text="China",Value="2",Selected=true},
+    new SelectListItem {Text="Bangladesh",Value="3" }
+
+}, "select Country")<br />
+
+        @Html.DropDownList("Department","Select Department")
+       @Html.LabelFor(Model => Model.EmpName) @Html.TextBoxFor(Model=>Model.EmpName)
+    </div>
+</body>
+</html>

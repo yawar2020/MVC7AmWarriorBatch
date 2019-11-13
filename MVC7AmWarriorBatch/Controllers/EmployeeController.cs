@@ -8,6 +8,7 @@ namespace MVC7AmWarriorBatch.Controllers
 {
     public class EmployeeController : Controller
     {
+        GaneshEntities db = new GaneshEntities();
         // GET: Employee
         public ViewResult GetEmployee()
         {
@@ -35,6 +36,11 @@ namespace MVC7AmWarriorBatch.Controllers
 
             ViewBag.Empinfo = dbobj;
             return View(dbobj);
+        }
+        public ActionResult HtmlHelperExample()
+        {
+            ViewBag.Department = new SelectList(db.DepartmentModels, "DeptId", "DeptName",4);
+            return View();
         }
     }
 }
